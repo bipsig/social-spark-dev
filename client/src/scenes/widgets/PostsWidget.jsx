@@ -10,7 +10,7 @@ const PostsWidget = ({ userId, isProfile }) => {
     const token = useSelector ((state) => state.token);
 
     const getPosts = async () => {
-        const response = await fetch("http://localhost:3001/posts", {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/posts`, {
             method: "GET",
             headers: {
                 Authorization: `${token}`
@@ -22,7 +22,7 @@ const PostsWidget = ({ userId, isProfile }) => {
     };
 
     const getUserPosts = async () => {
-        const response = await fetch(`http://localhost:3001/posts/${userId}/posts`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/posts/${userId}/posts`, {
             method: "GET",
             headers: {
                 Authorization: `${token}`

@@ -25,7 +25,7 @@ const FriendRow = ({ friendId, name, subtitle, userPicturePath }) => {
 	const patchFriend = async () => {
 		console.log ("Userid: ", _id);
 		console.log ("FriendId: ", friendId);
-		const response = await fetch(`http://localhost:3001/${_id}/${friendId}`, {
+		const response = await fetch(`${process.env.REACT_APP_BASE_URL}/${_id}/${friendId}`, {
 			method: "PATCH",
 			headers: {
 				Authorization: `${token}`,
